@@ -1,0 +1,6 @@
+{
+  "$version": "1.0",
+  "$schema": "https://workflows.somethingcatchy.net/schema/config.json",
+  "type": "minecraft",
+  "upload": { "modrinth": true, "curseforge": true, "nexus": true }
+}
