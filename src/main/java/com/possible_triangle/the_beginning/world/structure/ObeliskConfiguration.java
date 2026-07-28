@@ -1,4 +1,4 @@
-package com.possible_triangle.the_beginning.world.feature;
+package com.possible_triangle.the_beginning.world.structure;
 
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;

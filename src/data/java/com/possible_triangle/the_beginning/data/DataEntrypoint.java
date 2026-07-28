@@ -2,6 +2,7 @@ package com.possible_triangle.the_beginning.data;
 
 import com.possible_triangle.the_beginning.TBConstants;
 import com.possible_triangle.the_beginning.data.tags.TBBiomeTags;
+import com.possible_triangle.the_beginning.data.tags.TBTimelineTags;
 import java.util.Set;
 import net.minecraft.core.RegistrySetBuilder;
 import net.minecraft.core.registries.Registries;
@@ -28,6 +29,8 @@ public class DataEntrypoint {
                         .add(Registries.CONFIGURED_FEATURE, TBFeatureGen::configured)
                         .add(Registries.STRUCTURE, TBStructureGen::structures)
                         .add(Registries.STRUCTURE_SET, TBStructureGen::structureSets)
+                        .add(Registries.WORLD_CLOCK, TBTimeGen::clocks)
+                        .add(Registries.TIMELINE, TBTimeGen::timelines)
                         .add(Registries.DIMENSION_TYPE, TBDimensionGen::dimensionTypes)
                         .add(Registries.LEVEL_STEM, TBDimensionGen::levelStems),
                 Set.of(Identifier.DEFAULT_NAMESPACE, TBConstants.MOD_ID)
@@ -36,6 +39,7 @@ public class DataEntrypoint {
         var registries = dataDrivenProvider.getRegistryProvider();
 
         event.addProvider(new TBBiomeTags(output, registries));
+        event.addProvider(new TBTimelineTags(output, registries));
     }
 
 }

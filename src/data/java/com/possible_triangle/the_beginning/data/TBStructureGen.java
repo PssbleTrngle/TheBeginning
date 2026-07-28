@@ -2,14 +2,16 @@ package com.possible_triangle.the_beginning.data;
 
 import com.possible_triangle.the_beginning.TBConstants;
 import com.possible_triangle.the_beginning.index.TBTags;
-import com.possible_triangle.the_beginning.world.feature.ObeliskConfiguration;
-import com.possible_triangle.the_beginning.world.feature.ObeliskStructure;
+import com.possible_triangle.the_beginning.world.structure.ObeliskConfiguration;
+import com.possible_triangle.the_beginning.world.structure.ObeliskStructure;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.util.random.WeightedList;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.levelgen.feature.stateproviders.WeightedStateProvider;
 import net.minecraft.world.level.levelgen.structure.Structure;
 import net.minecraft.world.level.levelgen.structure.Structure.StructureSettings;
 import net.minecraft.world.level.levelgen.structure.StructureSet;
@@ -28,9 +30,14 @@ public class TBStructureGen {
                 new ObeliskStructure(
                         new StructureSettings(biomes.getOrThrow(TBTags.Biomes.HAS_OBELISK)),
                         new ObeliskConfiguration(
-                                BlockStateProvider.simple(Blocks.STONE),
-                                UniformInt.of(2, 5),
-                                UniformInt.of(12, 24)
+                                new WeightedStateProvider(
+                                        WeightedList.<BlockState>builder()
+                                                .add(Blocks.STONE.defaultBlockState(), 10)
+                                                .add(Blocks.ANDESITE.defaultBlockState(), 1)
+                                                .build()
+                                ),
+                                UniformInt.of(5, 9),
+                                UniformInt.of(24, 48)
                         )
                 )
         );
@@ -44,7 +51,7 @@ public class TBStructureGen {
                 new StructureSet(
                         structures.getOrThrow(OBELISK),
                         new RandomSpreadStructurePlacement(
-                                10, 4, RandomSpreadType.LINEAR, 64872
+                                20, 16, RandomSpreadType.LINEAR, 64872
                         )
                 )
         );

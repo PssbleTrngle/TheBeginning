@@ -1,21 +1,32 @@
 {
   "type": "the_beginning:obelisk",
   "base": {
-    "type": "minecraft:simple_state_provider",
-    "state": {
-      "Name": "minecraft:stone"
-    }
+    "type": "minecraft:weighted_state_provider",
+    "entries": [
+      {
+        "data": {
+          "Name": "minecraft:stone"
+        },
+        "weight": 10
+      },
+      {
+        "data": {
+          "Name": "minecraft:andesite"
+        },
+        "weight": 1
+      }
+    ]
   },
   "biomes": "#the_beginning:has_structure/obelisk",
   "height": {
     "type": "minecraft:uniform",
-    "max_inclusive": 24,
-    "min_inclusive": 12
+    "max_inclusive": 48,
+    "min_inclusive": 24
   },
   "size": {
     "type": "minecraft:uniform",
-    "max_inclusive": 5,
-    "min_inclusive": 2
+    "max_inclusive": 9,
+    "min_inclusive": 5
   },
   "spawn_overrides": {},
   "step": "surface_structures"

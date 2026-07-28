@@ -1,0 +1,52 @@
+{
+  "clock": "the_beginning:clock",
+  "period_ticks": 240000,
+  "tracks": {
+    "minecraft:gameplay/sky_light_level": {
+      "keyframes": [
+        {
+          "ticks": 133,
+          "value": 1.0
+        },
+        {
+          "ticks": 1186,
+          "value": 1.0
+        },
+        {
+          "ticks": 136700,
+          "value": 0.26666668
+        },
+        {
+          "ticks": 223300,
+          "value": 0.26666668
+        }
+      ],
+      "modifier": "multiply"
+    },
+    "minecraft:visual/sky_color": {
+      "keyframes": [
+        {
+          "ticks": 133,
+          "value": "#ff5729"
+        },
+        {
+          "ticks": 1000,
+          "value": "#ffa41c"
+        },
+        {
+          "ticks": 11867,
+          "value": "#ffffff"
+        },
+        {
+          "ticks": 136700,
+          "value": "#0f043b"
+        },
+        {
+          "ticks": 223300,
+          "value": "#0f043b"
+        }
+      ],
+      "modifier": "multiply"
+    }
+  }
+}
