@@ -3,6 +3,8 @@ plugins {
 }
 
 neoforge {
+    accessTransformer()
+
     dataGen {
         splitSourceSet()
     }

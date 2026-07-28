@@ -1,6 +1,7 @@
 {
-  "parent": "minecraft:block/cube_all",
+  "parent": "minecraft:block/cube_column",
   "textures": {
-    "all": "the_beginning:block/dawn_rock"
+    "end": "the_beginning:block/dawn_rock_top",
+    "side": "the_beginning:block/dawn_rock_side"
   }
 }

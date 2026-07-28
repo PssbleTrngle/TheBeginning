@@ -1,7 +1,16 @@
 {
   "variants": {
-    "": {
+    "axis=x": {
+      "model": "the_beginning:block/dawn_rock",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
       "model": "the_beginning:block/dawn_rock"
+    },
+    "axis=z": {
+      "model": "the_beginning:block/dawn_rock",
+      "x": 90
     }
   }
 }

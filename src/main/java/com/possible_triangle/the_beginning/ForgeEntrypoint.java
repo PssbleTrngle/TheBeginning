@@ -1,7 +1,7 @@
 package com.possible_triangle.the_beginning;
 
-import com.possible_triangle.the_beginning.api.TBConstants;
 import com.possible_triangle.the_beginning.index.TBBlocks;
+import com.possible_triangle.the_beginning.index.TBFeatures;
 import com.tterrag.registrate.AbstractRegistrate;
 import com.tterrag.registrate.Registrate;
 import net.neoforged.fml.common.Mod;
@@ -13,6 +13,7 @@ public class ForgeEntrypoint {
 
     public ForgeEntrypoint() {
         TBBlocks.register();
+        TBFeatures.register();
     }
 
 }

@@ -25,3 +25,6 @@ modId = "minecraft"
 versionRange = "${minecraft_version_range}"
 ordering = "AFTER"
 side = "BOTH"
+
+[[accessTransformers]]
+file="META-INF/accesstransformer.cfg"

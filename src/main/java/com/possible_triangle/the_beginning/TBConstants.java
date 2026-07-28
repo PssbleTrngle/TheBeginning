@@ -1,6 +1,8 @@
-package com.possible_triangle.the_beginning.api;
+package com.possible_triangle.the_beginning;
 
+import net.minecraft.core.Registry;
 import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceKey;
 
 public class TBConstants {
 
@@ -9,6 +11,10 @@ public class TBConstants {
 
     public static Identifier createId(String path) {
         return Identifier.fromNamespaceAndPath(MOD_ID, path);
+    }
+
+    public static <T> ResourceKey<T> createKey(ResourceKey<? extends Registry<T>> registry, String path) {
+        return ResourceKey.create(registry, createId(path));
     }
 
     public static final Identifier DIMENSION_ID = createId(MOD_ID);
