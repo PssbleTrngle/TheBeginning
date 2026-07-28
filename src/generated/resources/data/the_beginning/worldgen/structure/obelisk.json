@@ -1,0 +1,22 @@
+{
+  "type": "the_beginning:obelisk",
+  "base": {
+    "type": "minecraft:simple_state_provider",
+    "state": {
+      "Name": "minecraft:stone"
+    }
+  },
+  "biomes": "#the_beginning:has_structure/obelisk",
+  "height": {
+    "type": "minecraft:uniform",
+    "max_inclusive": 24,
+    "min_inclusive": 12
+  },
+  "size": {
+    "type": "minecraft:uniform",
+    "max_inclusive": 5,
+    "min_inclusive": 2
+  },
+  "spawn_overrides": {},
+  "step": "surface_structures"
+}

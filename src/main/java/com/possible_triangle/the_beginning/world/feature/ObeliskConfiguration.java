@@ -1,20 +1,19 @@
 package com.possible_triangle.the_beginning.world.feature;
 
-import com.mojang.serialization.Codec;
+import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.util.valueproviders.IntProvider;
 import net.minecraft.util.valueproviders.IntProviders;
-import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 
-public record ObeliskFeatureConfiguration(BlockStateProvider baseMaterial, IntProvider size, IntProvider height) implements FeatureConfiguration {
+public record ObeliskConfiguration(BlockStateProvider baseMaterial, IntProvider size, IntProvider height) {
 
-    public static final Codec<ObeliskFeatureConfiguration> CODEC = RecordCodecBuilder.create(builder ->
+    public static final MapCodec<ObeliskConfiguration> CODEC = RecordCodecBuilder.mapCodec(builder ->
             builder.group(
-                    BlockStateProvider.CODEC.fieldOf("base").forGetter(ObeliskFeatureConfiguration::baseMaterial),
-                    IntProviders.CODEC.fieldOf("size").forGetter(ObeliskFeatureConfiguration::size),
-                    IntProviders.CODEC.fieldOf("height").forGetter(ObeliskFeatureConfiguration::height)
-            ).apply(builder, ObeliskFeatureConfiguration::new)
+                    BlockStateProvider.CODEC.fieldOf("base").forGetter(ObeliskConfiguration::baseMaterial),
+                    IntProviders.CODEC.fieldOf("size").forGetter(ObeliskConfiguration::size),
+                    IntProviders.CODEC.fieldOf("height").forGetter(ObeliskConfiguration::height)
+            ).apply(builder, ObeliskConfiguration::new)
     );
 
 }
